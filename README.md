@@ -1,5 +1,4 @@
 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Hudson_River_Creash_0"></a>Hudson River Creash</h1>
-<h2 class="code-line" data-line-start=1 data-line-end=2 ><a id="Why_does_this_program_exist_1"></a>Why does this program exist?</h2>
 <p class="has-line-data" data-line-start="3" data-line-end="4"><a href="https://travis-ci.org/joemccann/dillinger"><img src="https://travis-ci.org/joemccann/dillinger.svg?branch=master" alt="Build Status"></a></p>
 <h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="Features_6"></a>Features</h2>
 <ul>
@@ -15,5 +14,5 @@
 <li class="has-line-data" data-line-start="20" data-line-end="21">bird flies into the airplane and the airplane starts descending</li>
 <li class="has-line-data" data-line-start="21" data-line-end="23">it crashes into the hudson(not yet coded)</li>
 </ul>
-<h2 class="code-line" data-line-start=23 data-line-end=24 ><a id="Installation_23"></a>Installation</h2>
-<p class="has-line-data" data-line-start="25" data-line-end="26">Just install tigerjython and copy paste but if you are using this then its probablly for school so me telling you how to install it is useless</p>
+<h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="Features_6"></a>notes</h2>
+beide versionen funktionieren aber die zweite ist an sich cleaner. Die erste ist aber find ich besser weil sie kürzer ist und weniger komisch
