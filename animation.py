@@ -6,12 +6,66 @@ from random import randint
 
 Options.setPlaygroundSize(1000, 1000) 
 
- 
+def nyc(height):
+    building(-500,height,70,50,0) 
+    
+    
+    building(-445,height,40,30,False) 
+
+    building(-410,height,30,30,False) 
+    
+    building(-370,height,90,30,True) 
+
+    building(-355,height,50,30,False) 
+
+    building(-320,height,20,20,False) 
+
+    building(-295,height,70,35,False) 
+
+    building(-258,height,50,35,False) 
+
+    building(-220,height,140,35,True) 
+
+    building(-182,height,70,30,False) 
+
+    building(-150,height,50,40,False) 
+
+    building(-108,height,40,30,False) 
+
+    building(-75,height,70,30,False) 
+
+    building(-40,height,120,30,True) 
+
+    building(-6,height,30,30,False) 
+
+    building(30,height,65,35,True) 
+
+    building(70,height,65,35,True) 
+
+    building(110,height,77,50,False) 
+
+    building(162,height,55,45,False) 
+
+    building(210,height,30,30,False) 
+
+    building(245,height,50,30,False) 
+
+    building(280,height,100,45,True) 
+
+    building(332,height,50,40,False) 
+    
+    building(379,height,70,30,True)
+    
+    building(420,height,90,30,False)
+    
+    building(452,height,50,40,False)
+    
+    repaint()
 
 def building(buildingX,buildingY,height,width,ifStrich): 
-
-    home() 
-
+    
+    home()
+    
     setPos(buildingX,buildingY) 
 
     setPenColor("black") 
@@ -29,8 +83,9 @@ def building(buildingX,buildingY,height,width,ifStrich):
     fd(height) 
 
     fillOff() 
+    
 
-    if (ifStrich == 1): 
+    if (ifStrich == True): 
 
         setPos(buildingX+width/2,buildingY+height) 
 
@@ -41,7 +96,8 @@ def building(buildingX,buildingY,height,width,ifStrich):
         fd(20) 
 
         dot(5) 
-
+        
+    
  
 
 def cloud(cloudX, cloudY): 
@@ -63,16 +119,51 @@ def cloud(cloudX, cloudY):
         dot(40) 
 
          
-
-def wave(): 
-
-    repeat(40): 
-
-        leftArc(50,85) 
-
-        rightArc(50,85) 
-
-    repaint() 
+def wave():
+    repeat(10):
+        leftArc(50,85)
+        rightArc(50,85)
+        
+        
+def draw_wave(y):
+    setPos(-440,y)
+    setLineWidth(5)
+    right(42.5)
+    rightArc(50,90)
+    waveX= -445-50
+    increment = 0
+    repeat(200):
+        
+        clear()
+        setPos(waveX,y)
+        wave()
+        if increment < 25:
+            waveX = waveX-5
+            increment = increment+1
+        else: 
+            waveX = -445-50
+            increment = 0
+            
+        setPos(waveX,y-100)
+        wave()
+        if increment < 25:
+            waveX = waveX-5
+            increment = increment+1
+        else: 
+            waveX = -445-50
+            increment = 0
+            
+        
+        setPos(waveX,y-50)
+        wave()
+        repaint()
+        delay(100)
+        if increment < 25:
+            waveX = waveX-5
+            increment = increment+1
+        else: 
+            waveX = -445-50
+            increment = 0
 
          
 
@@ -84,7 +175,7 @@ def explosion(explosionX, explosionY):
 
     repeat 8: 
 
-        releaseX = randint(explosionX-10,explosionX+10) 
+        releaseX = randint(round(explosionX-10, 0), round(explosionX+10, 0)) 
 
         setPos(releaseX,explosionY) 
 
@@ -140,21 +231,21 @@ def particle(size1,size2):
 
          
 
-def draw_motor(rotation): 
+def draw_motor(rotation, size): 
 
     heading(rotation) 
 
     repeat(5): 
 
-        dot(50) 
+        dot(size*0.7142) 
 
-        fd(10) 
+        fd(size*0.143) 
 
      
 
  
 
-def draw_spoiler(rotation): 
+def draw_spoiler(rotation, size): 
 
     heading(rotation) 
 
@@ -162,15 +253,15 @@ def draw_spoiler(rotation):
 
     left(90) 
 
-    fd(100) 
+    fd(size*1.42857) 
 
     right(90) 
 
-    fd(10) 
+    fd(size*0.142857) 
 
     right(45) 
 
-    fd(100) 
+    fd(size*1.42857) 
 
     fillPath() 
 
@@ -178,7 +269,7 @@ def draw_spoiler(rotation):
 
      
 
-def draw_window(windowX, windowY, rotation): 
+def draw_window(windowX, windowY, rotation, size): 
 
     heading(rotation) 
 
@@ -192,21 +283,21 @@ def draw_window(windowX, windowY, rotation):
 
         penDown() 
 
-        dot(15) 
+        dot(size*0.211) 
 
-        fd(7) 
+        fd(size*0.0986) 
 
-        dot(15) 
+        dot(size*0.211) 
 
         penUp() 
 
         right(180) 
 
-        fd(7) 
+        fd(size*0.0986) 
 
         left(90) 
 
-        fd(25) 
+        fd(size*0.3521) 
 
         left(90) 
 
@@ -214,7 +305,7 @@ def draw_window(windowX, windowY, rotation):
 
              
 
-def draw_Airplane(x,y, rotation, count): 
+def draw_Airplane(x,y, rotation, count, size): 
 
     heading(rotation) 
 
@@ -222,15 +313,15 @@ def draw_Airplane(x,y, rotation, count):
 
     setFillColor("white") 
 
-    dotSize = 71 
+    dotSize = size 
 
     while count<(30): 
 
         setPenColor("white") 
 
-        dot(75) 
+        dot(size+4) 
 
-        fd(10) 
+        fd(size/7) 
 
         count = count+1 
 
@@ -240,11 +331,11 @@ def draw_Airplane(x,y, rotation, count):
 
         dot(dotSize) 
 
-        fd(5) 
+        fd(size/14) 
 
         heading(180) 
 
-        fd(1.2) 
+        fd(size/58.3) 
 
         heading(90) 
 
@@ -254,21 +345,21 @@ def draw_Airplane(x,y, rotation, count):
 
     penUp() 
 
-    setPos(x-35, y) 
+    setPos(x-size*0.4929, y) 
 
     penDown() 
 
-    draw_spoiler(rotation) 
+    draw_spoiler(rotation, size) 
 
-    draw_window(x,y, rotation) 
+    draw_window(x,y, rotation, size) 
 
     penUp() 
 
-    setPos(x+100, y-40) 
+    setPos(x+size*1.4084, y-size*0.563380) 
 
     penDown() 
 
-    draw_motor(rotation) 
+    draw_motor(rotation, size) 
 
      
 
@@ -386,13 +477,15 @@ hideTurtle()
 
 enableRepaint(False) 
 
+nycHeight = 0
+
 wingAngle = 90 
 
 birdX = 0 
 
 birdY = 0 
 
-x = 570 
+x = -600
 
 y = 0 
 
@@ -408,9 +501,11 @@ clear('lightSkyBlue')
 
 rotation = 90 
 
+airplaneSize = 71
+
 while x < 550: 
 
-    draw_Airplane(x,y, rotation, count) 
+    draw_Airplane(x,y, rotation, count, airplaneSize) 
 
     x = x+10 
 
@@ -540,7 +635,7 @@ while x >= 580 and x<= 582:
 
     repeat(4): 
 
-        draw_Airplane(airplaneX,airplaneY, rotation, count) 
+        draw_Airplane(airplaneX,airplaneY, rotation, count, airplaneSize) 
 
         cloud(cloudX+100, cloudY+300) 
 
@@ -570,7 +665,7 @@ while x >= 580 and x<= 582:
 
     repeat(4): 
 
-        draw_Airplane(airplaneX,airplaneY, rotation, count) 
+        draw_Airplane(airplaneX,airplaneY, rotation, count, airplaneSize)
 
         cloud(cloudX+100, cloudY+300) 
 
@@ -616,7 +711,7 @@ while x > 582 and x<= 620:
 
  
 
-    draw_Airplane(airplaneX,airplaneY, rotation, count) 
+    draw_Airplane(airplaneX,airplaneY, rotation, count, airplaneSize) 
 
     cloud(cloudX+100, cloudY+300) 
 
@@ -626,9 +721,8 @@ while x > 582 and x<= 620:
 
     cloud(cloudX-500, cloudY+0) 
 
-    explosion(airplaneX+70, airplaneY-40) 
+    explosion(airplaneX+airplaneSize, airplaneY-airplaneSize*0.525) 
 
-    x = x+1 
 
     airplaneY = airplaneY-20 
 
@@ -640,52 +734,154 @@ while x > 582 and x<= 620:
 
     clear('lightSkyBlue')  
 
-    if x >582 and x < 592: 
+    if x > 582 and x < 592: 
 
         rotation = rotation+1   
-
-         
-
-while x > 620: 
-
-    building(-390,0,30,30,0) 
-
-    building(-355,0,50,30,0) 
-
-    building(-320,0,20,20,0) 
-
-    building(-295,0,70,35,0) 
-
-    building(-258,0,50,35,0) 
-
-    building(-220,0,140,35,1) 
-
-    building(-182,0,70,30,0) 
-
-    building(-150,0,50,40,0) 
-
-    building(-108,0,40,30,0) 
-
-    building(-75,0,70,30,0) 
-
-    building(-40,0,120,30,1) 
-
-    building(-6,0,30,30,0) 
-
-    building(30,0,65,35,1) 
-
-    building(70,0,65,35,1) 
-
-    building(110,0,77,50,0) 
-
-    building(162,0,55,45,0) 
-
-    building(210,0,30,30,0) 
-
-    building(245,0,50,30,0) 
-
-    building(280,0,100,45,1) 
-
-    building(332,0,50,40,0) 
-
+        
     x = x+1 
+
+increment = 0  
+y = -50   
+waveX= 750 
+while x > 620 and x <=640: 
+    clear('lightSkyBlue')
+    nyc(nycHeight)
+    x = x+1 
+    setPos(-440,y)
+    setPenColor('blue')
+    setLineWidth(5)
+    right(42.5+90)
+    setPos(waveX,y)
+    wave()
+        
+    setPos(waveX,y-100)
+    wave()     
+    setPos(waveX,y-50)
+    wave()
+    repaint()
+    delay(100)
+    if increment < 67:
+        waveX = waveX-2
+        increment = increment+1
+    else:
+        waveX = 750
+        increment = 0
+    
+    
+ 
+nycHeight= -600
+airplaneY = 0
+airplaneX = -400      
+while x > 640 and x <=700: 
+    clear('lightSkyBlue')
+    nyc(nycHeight)
+    
+    setPenColor('blue')
+    setLineWidth(5)
+    right(42.5+90)
+    setPos(waveX,nycHeight-50)
+    wave()
+        
+    setPos(waveX,nycHeight-100)
+    wave() 
+        
+    setPos(waveX,nycHeight-150)
+    wave()
+    
+    setPos(waveX,nycHeight-200)
+    wave()
+    
+    setPos(waveX,nycHeight-250)
+    wave()
+    
+    setPos(waveX,nycHeight-300)
+    wave()
+    
+    setPos(waveX,nycHeight-350)
+    wave()
+    
+    setPos(waveX,nycHeight-350)
+    wave()
+    
+    setPos(waveX,nycHeight-400)
+    wave()
+    
+    setPos(waveX,nycHeight-450)
+    wave()
+    
+    setPos(waveX,nycHeight-500)
+    wave()
+    
+    repaint()
+    
+    
+    draw_Airplane(airplaneX,airplaneY, rotation, count, airplaneSize*0.571428)
+    explosion(airplaneX+41, airplaneY-airplaneSize+50) 
+    delay(100)
+    if increment < 67:
+        waveX = waveX-2
+        increment = increment+1
+    else:
+        waveX = 750
+        increment = 0
+    x = x+1
+    airplaneX = airplaneX+5
+    nycHeight= nycHeight+12
+ 
+rotation = 90    
+while x > 700 and x <=720: 
+    clear('lightSkyBlue')
+    nyc(nycHeight)
+    
+    setPenColor('blue')
+    setLineWidth(5)
+    right(42.5+90)
+    setPos(waveX,nycHeight-50)
+    wave()
+        
+    setPos(waveX,nycHeight-100)
+    wave() 
+        
+    setPos(waveX,nycHeight-150)
+    wave()
+    
+    setPos(waveX,nycHeight-200)
+    wave()
+    
+    setPos(waveX,nycHeight-250)
+    wave()
+    
+    setPos(waveX,nycHeight-300)
+    wave()
+    
+    setPos(waveX,nycHeight-350)
+    wave()
+    
+    setPos(waveX,nycHeight-350)
+    wave()
+    
+    setPos(waveX,nycHeight-400)
+    wave()
+    
+    setPos(waveX,nycHeight-450)
+    wave()
+    
+    setPos(waveX,nycHeight-500)
+    wave()
+    
+    repaint()
+    
+    
+    draw_Airplane(airplaneX,airplaneY, rotation, count, airplaneSize*0.571428)
+    explosion(airplaneX+41, airplaneY-airplaneSize+50) 
+    delay(100)
+    if increment < 67:
+        waveX = waveX-2
+        increment = increment+1
+    else:
+        waveX = 750
+        increment = 0
+    x = x+1
+    airplaneX = airplaneX+5
+   
+     
