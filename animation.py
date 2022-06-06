@@ -712,7 +712,9 @@ while x > 582 and x<= 620:
  
 
     draw_Airplane(airplaneX,airplaneY, rotation, count, airplaneSize) 
-
+    
+    explosion(airplaneX+airplaneSize, airplaneY-airplaneSize*0.525) 
+    
     cloud(cloudX+100, cloudY+300) 
 
     cloud(cloudX-205, cloudY-389) 
@@ -721,7 +723,7 @@ while x > 582 and x<= 620:
 
     cloud(cloudX-500, cloudY+0) 
 
-    explosion(airplaneX+airplaneSize, airplaneY-airplaneSize*0.525) 
+    
 
 
     airplaneY = airplaneY-20 
@@ -754,9 +756,37 @@ while x > 620 and x <=640:
     setPos(waveX,y)
     wave()
         
-    setPos(waveX,y-100)
-    wave()     
     setPos(waveX,y-50)
+    wave()
+        
+    setPos(waveX,y-100)
+    wave() 
+        
+    setPos(waveX,y-150)
+    wave()
+    
+    setPos(waveX,y-200)
+    wave()
+    
+    setPos(waveX,y-250)
+    wave()
+    
+    setPos(waveX,y-300)
+    wave()
+    
+    setPos(waveX,y-350)
+    wave()
+    
+    setPos(waveX,y-350)
+    wave()
+    
+    setPos(waveX,y-400)
+    wave()
+    
+    setPos(waveX,y-450)
+    wave()
+    
+    setPos(waveX,y-500)
     wave()
     repaint()
     delay(100)
