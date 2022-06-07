@@ -12,7 +12,7 @@
 <li class="has-line-data" data-line-start="18" data-line-end="19">plane flies up</li>
 <li class="has-line-data" data-line-start="19" data-line-end="20">bird scene</li>
 <li class="has-line-data" data-line-start="20" data-line-end="21">bird flies into the airplane and the airplane starts descending</li>
-<li class="has-line-data" data-line-start="21" data-line-end="23">it crashes into the hudson(not yet coded)</li>
+<li class="has-line-data" data-line-start="21" data-line-end="23">it crashes into the hudson</li>
 </ul>
 <h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="Features_6"></a>notes</h2>
 beide versionen funktionieren aber die zweite ist an sich cleaner. Die erste ist aber find ich besser weil sie kürzer ist und weniger komisch
