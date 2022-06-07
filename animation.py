@@ -6,6 +6,7 @@ from random import randint
 
 Options.setPlaygroundSize(1000, 1000) 
 
+#nyc
 def nyc(height):
     building(-500,height,70,50,0) 
     
@@ -99,7 +100,7 @@ def building(buildingX,buildingY,height,width,ifStrich):
         
     
  
-
+# die wolke
 def cloud(cloudX, cloudY): 
 
     repeat(100): 
@@ -118,13 +119,13 @@ def cloud(cloudX, cloudY):
 
         dot(40) 
 
-         
+#einfache  welle         
 def wave():
     repeat(10):
         leftArc(50,85)
         rightArc(50,85)
         
-        
+# welle die sich bewegt        
 def draw_wave(y):
     setPos(-440,y)
     setLineWidth(5)
@@ -166,7 +167,7 @@ def draw_wave(y):
             increment = 0
 
          
-
+# particle system für explosion
 def explosion(explosionX, explosionY): 
 
     penUp() 
@@ -216,7 +217,7 @@ def explosion(explosionX, explosionY):
  
 
  
-
+#ein einziges particle
 def particle(size1,size2): 
 
     particleSize = randint(size1,size2) 
@@ -230,7 +231,7 @@ def particle(size1,size2):
          
 
          
-
+# motor
 def draw_motor(rotation, size): 
 
     heading(rotation) 
@@ -244,7 +245,7 @@ def draw_motor(rotation, size):
      
 
  
-
+# spoiler
 def draw_spoiler(rotation, size): 
 
     heading(rotation) 
@@ -268,7 +269,7 @@ def draw_spoiler(rotation, size):
  
 
      
-
+# die fenster
 def draw_window(windowX, windowY, rotation, size): 
 
     heading(rotation) 
@@ -304,7 +305,7 @@ def draw_window(windowX, windowY, rotation, size):
      
 
              
-
+# das flugzeug
 def draw_Airplane(x,y, rotation, count, size): 
 
     heading(rotation) 
@@ -362,7 +363,7 @@ def draw_Airplane(x,y, rotation, count, size):
     draw_motor(rotation, size) 
 
      
-
+# der vogel 
 def draw_Bird(wingAngle, birdX, birdY): 
 
     setPos(birdX, birdY) 
@@ -442,7 +443,7 @@ def draw_Bird(wingAngle, birdX, birdY):
     draw_Wing(wingAngle) 
 
      
-
+#der flügel des vogels
 def draw_Wing(orientation): 
 
     startPath() 
@@ -470,7 +471,7 @@ def draw_Wing(orientation):
  
 
  
-
+# ainmation
 makeTurtle() 
 
 hideTurtle() 
